@@ -1,0 +1,33 @@
+.unload {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  column-gap: 15px;
+  font-size: 14px;
+  line-height: 1.2;
+  &__left {
+    height: 500px;
+  }
+  &__right {
+    height: 500px;
+  }
+}
+
+.unload__desc {
+  padding: 15px;
+}
+
+.unload__desc-title {
+  font-size: 18px;
+}
+
+.unload__desc-subtitle {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.unload__desc-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-width: 70%;
+}
