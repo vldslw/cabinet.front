@@ -1,17 +1,24 @@
 <template>
   <main class="unload">
     <section class="unload__left">
-      <div class="unload__desc block">
-          <h2 class="unload__desc-title">Выгрузка</h2>
-          <h3 class="unload__desc-subtitle"><span class="text-bold">Выполняет работу:</span></h3>
-          <ul class="unload__desc-list">
-            <li class="unload__desc-list-item"> - Собирает фотографии из заказов пользователей.</li>
-            <li class="unload__desc-list-item"> - Выгружает по папкам.</li>
-          </ul>
-        </div>
+      <div class="block unload__desc">
+        <h2 class="unload__desc-title">Выгрузка</h2>
+        <h3 class="unload__desc-subtitle"><span class="text-bold">Выполняет работу:</span></h3>
+        <ul class="unload__desc-list">
+          <li class="unload__desc-item"> - Собирает фотографии из заказов пользователей.</li>
+          <li class="unload__desc-item"> - Выгружает по папкам.</li>
+        </ul>
+      </div>
+      <div class="block unload__card">
+        <p class="unload__card-text">Задача выполнена: <span class="text-bold">15.09.2023 в 02:04 (GMT)</span></p>
+        <p class="unload__card-text">Статус задачи: <span class="text-bold">Выгрузка успешно завершена</span> </p>
+        <p class="unload__card-text">ID выгрузки: <span class="text-bold">64</span></p>
+        <p class="unload__card-text">Выгрузка заказа из фотосессии: No 4935 </p>
+        <p class="unload__card-text">Размер выгрузки: <span class="text-bold">1.6 MiB</span></p>
+      </div>
     </section>
     <section class="unload__right">
-      <div class="notice" data-color="light-purple">
+      <div class="notice unload__info" data-color="light-purple">
         <p>Для того, чтобы посмотреть информацию о <span class="text-bold">выгрузке</span>, а также ее скачать, нажмите на требуемую выгрузку в столбце слева</p>
       </div>
     </section>
