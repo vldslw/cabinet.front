@@ -9,16 +9,16 @@
       </ul>
     </UnloadBlock>
     <section class="unload__cards">
-      <div 
+      <UnloadCard 
         v-for="card in cards" 
-        :key="card.id" class="block unload__card" :card-status="card.status"
+        :key="card.id" class="unload__card" :card-status="card.status"
         @click="fetchLink(card.id)">
         <p class="unload__card-text">Задача выполнена: <span class="text-bold">{{ card.date }}</span></p>
         <p class="unload__card-text">Статус задачи: <span class="text-bold">{{ card.status_text }}</span> </p>
         <p class="unload__card-text">ID выгрузки: <span class="text-bold">{{ card.id }}</span></p>
         <p class="unload__card-text">{{ card.event }}</p>
         <p class="unload__card-text">Размер выгрузки: <span class="text-bold">{{ card.size }}</span></p>
-      </div>
+      </UnloadCard>
     </section>   
     <section class="unload__sticky">
       <div v-if="showInfo === true" class="notice unload__info" data-color="light-purple">
