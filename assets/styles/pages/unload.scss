@@ -1,0 +1,98 @@
+.unload {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  column-gap: 15px;
+  grid-template-areas: 
+    "desc right"
+    "cards right";
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--color_text);
+  @include active-by("xslg") {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "desc"
+    "right"
+    "cards";
+  }
+  &__sticky {
+    background-color: var(--bg_page);
+    grid-area: right;
+    position: sticky;
+    top: 0;
+    @include active-by("xslg") {
+      box-shadow: 0 0 0 1px var(--bg_page);
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+  &__desc {
+    grid-area: desc;
+    padding: 15px;
+    @include active-by("xslg") {
+      margin-bottom: 2px;
+    }
+  }
+  
+  &__desc-title {
+    font-size: 20px;
+    @include active-by("xslg") {
+      font-size: 18px;
+    }
+  }
+  
+  &__desc-subtitle {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  
+  &__desc-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-width: 70%;
+  }
+  &__cards {
+    grid-area: cards;
+    display: flex;
+    flex-direction: column;
+  }
+  &__card {
+    grid-area: card;
+    cursor: pointer;
+    padding: 15px;
+    margin-bottom: 15px;
+    &:first-of-type {
+      margin-top: 15px;
+    }
+  }
+  &__info {
+    position: sticky;
+    top: 15px;
+    @include active-by("xslg") {
+      margin-top: 13px;
+    }
+  }
+  &__download {
+    padding: 15px;
+    position: sticky;
+    top: 15px;
+    @include active-by("xslg") {
+      margin-top: 13px;
+    }
+  }
+  &__download-title {
+    font-size: 16px;
+  }
+  &__download-link {
+    margin-right: 15px;
+  }
+  &__download-btn {
+    padding: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+  }
+}
+

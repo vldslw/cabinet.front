@@ -35,6 +35,9 @@
 @import "components/footer/footer"; // нижний футер
 @import "components/block"; //Стили для всех карточек
 @import "components/nav/nav";
+@import "components/cabinet/links";
+@import "components/notice/notice";
+@import "components/notice/data-color";
 @import "components/humburger-button/hamburger-button"; // Гамбургер
 @import "components/section/section"; //Разположение логотипа в topnav
 @import "components/logo/logo"; //Логотип
@@ -48,3 +51,6 @@
 @import "components/button/data-size"; //размеры кнопки
 
 @import "components/a/a-color";
+@import "components/unload/unloadcard";
+
+@import "pages/unload.scss";
