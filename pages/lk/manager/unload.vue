@@ -16,7 +16,7 @@
         <p class="unload__card-text">Задача выполнена: <span class="text-bold">{{ card.date }}</span></p>
         <p class="unload__card-text">Статус задачи: <span class="text-bold">{{ card.status_text }}</span> </p>
         <p class="unload__card-text">ID выгрузки: <span class="text-bold">{{ card.id }}</span></p>
-        <p class="unload__card-text">{{ card.event }}</p>
+        <p class="unload__card-text" v-html="card.event"/>
         <p class="unload__card-text">Размер выгрузки: <span class="text-bold">{{ card.size }}</span></p>
       </UnloadCard>
     </section>   
