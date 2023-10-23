@@ -33,37 +33,30 @@
   </main>
 </template>
 
-<script>
-  export default {
-    async setup() {
-    const { data } = await useFetch(`https://dev-cabinet.seenday.com/e.scripts`, {
-      query: { page: 'pages:unload', event: 'get' }
+<script setup>
+  const { data } = await useAPIFetch(`/e.scripts`, {
+    query: { page: 'pages:unload', event: 'get' }
+  });
+
+  const jsonData = JSON.parse(data.value);
+  
+  const cards = ref(toRaw(jsonData.response.data));
+  const showInfo = ref(true);
+  const link = ref('');
+
+  async function fetchLink(id) {
+    const { data } = await useAPIFetch(`/e.scripts`, {
+      query: { page: 'pages:unload', event: 'get', unload_id: id }
     });
     const jsonData = JSON.parse(data.value);
-    const cards = toRaw(jsonData.response.data);
-    return { cards };
-    },
-    data () {
-      return {
-        showInfo: true,
-        link: '',
-      }
-    },
-    methods: {
-      async fetchLink(id) {
-        const { data } = await useAPIFetch(`/e.scripts`, {
-          query: { page: 'pages:unload', event: 'get', unload_id: id }
-        });
-        const jsonData = JSON.parse(data.value);
-        const cardLink = toRaw(jsonData.response.data[0].download_link);
-        this.link = cardLink;
-        this.showInfo = false;
-      },
-      copyToClipboard () {
-        navigator.clipboard.writeText(this.link)
-      },
-    }
-  }
+    const cardLink = toRaw(jsonData.response.data[0].download_link);
+    link.value = cardLink;
+    showInfo.value = false;
+  };
+
+  function copyToClipboard () {
+    navigator.clipboard.writeText(link.value)
+  };
 </script>
 
 <style lang="scss" scoped>
