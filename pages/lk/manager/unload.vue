@@ -1,14 +1,14 @@
 <template>
   <main class="unload">
-    <section class="unload__left">
-      <div class="block unload__desc">
-        <h2 class="unload__desc-title">Выгрузка</h2>
-        <h3 class="unload__desc-subtitle"><span class="text-bold">Выполняет работу:</span></h3>
-        <ul class="unload__desc-list">
-          <li class="unload__desc-item"> - Собирает фотографии из заказов пользователей.</li>
-          <li class="unload__desc-item"> - Выгружает по папкам.</li>
-        </ul>
-      </div>
+    <section class="block unload__desc">
+      <h2 class="unload__desc-title">Выгрузка</h2>
+      <h3 class="unload__desc-subtitle"><span class="text-bold">Выполняет работу:</span></h3>
+      <ul class="unload__desc-list">
+        <li class="unload__desc-item"> - Собирает фотографии из заказов пользователей.</li>
+        <li class="unload__desc-item"> - Выгружает по папкам.</li>
+      </ul>
+    </section>
+    <section class="unload__cards">
       <div 
         v-for="card in cards" 
         :key="card.id" class="block unload__card" :card-status="card.status"
@@ -19,8 +19,8 @@
         <p class="unload__card-text">{{ card.event }}</p>
         <p class="unload__card-text">Размер выгрузки: <span class="text-bold">{{ card.size }}</span></p>
       </div>
-    </section>
-    <section class="unload__right">
+    </section>   
+    <section class="unload__sticky">
       <div v-if="showInfo === true" class="notice unload__info" data-color="light-purple">
         <p>Для того, чтобы посмотреть информацию о <span class="text-bold">выгрузке</span>, а также ее скачать, нажмите на требуемую выгрузку в столбце слева</p>
       </div>
