@@ -27,7 +27,7 @@
       <div v-else class="block unload__download">
         <h2 class="unload__download-title"><span class="text-bold">Ссылка для скачивания архива Выгрузки (.zip):</span></h2>
         <a class="link unload__download-link" :href="link">{{ link }}</a>
-        <button class="span-link unload__download-btn" @click="copyToClipboard(link)">cкопировать ссылку</button>
+        <button class="span-link unload__download-btn" @click="copyToClipboard()">cкопировать ссылку</button>
       </div>
     </section>
   </main>
@@ -36,7 +36,7 @@
 <script>
   export default {
     async setup() {
-    const { data } = await useFetch(`https://dev-cabinet.seenday.com/e.scripts?page`, {
+    const { data } = await useFetch(`https://dev-cabinet.seenday.com/e.scripts`, {
       query: { page: 'pages:unload', event: 'get' }
     });
     const jsonData = JSON.parse(data.value);
@@ -51,7 +51,7 @@
     },
     methods: {
       async fetchLink(id) {
-        const { data } = await useFetch(`https://dev-cabinet.seenday.com/e.scripts?page`, {
+        const { data } = await useFetch(`https://dev-cabinet.seenday.com/e.scripts`, {
           query: { page: 'pages:unload', event: 'get', unload_id: id }
         });
         const jsonData = JSON.parse(data.value);
@@ -59,8 +59,8 @@
         this.link = cardLink;
         this.showInfo = false;
       },
-      copyToClipboard (link) {
-        navigator.clipboard.writeText(link)
+      copyToClipboard () {
+        navigator.clipboard.writeText(this.link)
       },
     }
   }
