@@ -1,6 +1,7 @@
 .unloadcard {
   border-left: 10px solid;
   border-color: var(--color_danger);
+  border-radius: 3px;
   &[card-status="green"] {
     border-color: var(--color_success);
   }

@@ -16,14 +16,22 @@
     "cards";
   }
   &__sticky {
+    background-color: var(--bg_page);
     grid-area: right;
     position: sticky;
-    top: 15px;
+    top: 0;
+    @include active-by("xslg") {
+      box-shadow: 0 0 0 1px var(--bg_page);
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
   }
   &__desc {
     grid-area: desc;
     padding: 15px;
-    margin-bottom: 15px;
+    @include active-by("xslg") {
+      margin-bottom: 2px;
+    }
   }
   
   &__desc-title {
@@ -54,17 +62,24 @@
     cursor: pointer;
     padding: 15px;
     margin-bottom: 15px;
+    &:first-of-type {
+      margin-top: 15px;
+    }
   }
   &__info {
     position: sticky;
     top: 15px;
-    margin-bottom: 15px;
+    @include active-by("xslg") {
+      margin-top: 13px;
+    }
   }
   &__download {
     padding: 15px;
     position: sticky;
     top: 15px;
-    margin-bottom: 15px;
+    @include active-by("xslg") {
+      margin-top: 13px;
+    }
   }
   &__download-title {
     font-size: 16px;
