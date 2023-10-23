@@ -27,7 +27,7 @@
       <div v-else class="block unload__download">
         <h2 class="unload__download-title"><span class="text-bold">Ссылка для скачивания архива Выгрузки (.zip):</span></h2>
         <a class="link unload__download-link" :href="link">{{ link }}</a>
-        <button class="span-link unload__download-btn">cкопировать ссылку</button>
+        <button class="span-link unload__download-btn" @click="copyToClipboard(link)">cкопировать ссылку</button>
       </div>
     </section>
   </main>
@@ -58,7 +58,10 @@
         const cardLink = toRaw(jsonData.response.data[0].download_link);
         this.link = cardLink;
         this.showInfo = false;
-      }
+      },
+      copyToClipboard (link) {
+        navigator.clipboard.writeText(link)
+      },
     }
   }
 </script>
