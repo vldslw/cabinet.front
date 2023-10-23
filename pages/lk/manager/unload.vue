@@ -51,7 +51,7 @@
     },
     methods: {
       async fetchLink(id) {
-        const { data } = await useFetch(`https://dev-cabinet.seenday.com/e.scripts`, {
+        const { data } = await useAPIFetch(`/e.scripts`, {
           query: { page: 'pages:unload', event: 'get', unload_id: id }
         });
         const jsonData = JSON.parse(data.value);
