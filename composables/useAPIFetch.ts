@@ -6,7 +6,7 @@ export const useAPIFetch: useFetchType = (path, options = {}) => {
 
   options.baseURL = config.public.apiBase;
 
-  // options.server = false;
+  options.server = false;
 
   if (options.params) {
     options.params = config.public.devToken ? {'dev_token': config.public.devToken, ...options.params} : {...options.params}

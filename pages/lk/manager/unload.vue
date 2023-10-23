@@ -9,7 +9,7 @@
       </ul>
     </UnloadBlock>
     <section class="unload__cards">
-      <UnloadCard 
+      <UnloadCard
         v-for="card in cards" 
         :key="card.id" class="unload__card" :card-status="card.status"
         @click="fetchLink(card.id)">
@@ -38,9 +38,8 @@
     query: { page: 'pages:unload', event: 'get' }
   });
 
-  const jsonData = JSON.parse(data.value);
+  const cards = computed(() => data.value ? toRaw(JSON.parse(data.value).response.data) : null);
   
-  const cards = ref(toRaw(jsonData.response.data));
   const showInfo = ref(true);
   const link = ref('');
 
@@ -48,8 +47,7 @@
     const { data } = await useAPIFetch(`/e.scripts`, {
       query: { page: 'pages:unload', event: 'get', unload_id: id }
     });
-    const jsonData = JSON.parse(data.value);
-    const cardLink = toRaw(jsonData.response.data[0].download_link);
+    const cardLink = toRaw(JSON.parse(data.value).response.data[0].download_link);
     link.value = cardLink;
     showInfo.value = false;
   };
