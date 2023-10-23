@@ -1,13 +1,13 @@
 <template>
   <main class="unload">
-    <section class="block unload__desc">
+    <UnloadBlock class="unload__desc">
       <h2 class="unload__desc-title">Выгрузка</h2>
       <h3 class="unload__desc-subtitle"><span class="text-bold">Выполняет работу:</span></h3>
       <ul class="unload__desc-list">
         <li class="unload__desc-item"> - Собирает фотографии из заказов пользователей.</li>
         <li class="unload__desc-item"> - Выгружает по папкам.</li>
       </ul>
-    </section>
+    </UnloadBlock>
     <section class="unload__cards">
       <div 
         v-for="card in cards" 
