@@ -37,5 +37,21 @@
   }
   &__info {
   }
+  &__download {
+    padding: 15px;
+  }
+  &__download-title {
+    font-size: 16px;
+  }
+  &__download-link {
+    margin-right: 15px;
+  }
+  &__download-btn {
+    padding: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+  }
 }
 
