@@ -11,7 +11,7 @@
       </div>
       <div 
         v-for="card in cards" 
-        :key="card.id" class="block unload__card" 
+        :key="card.id" class="block unload__card" :card-status="card.status"
         @click="fetchLink(card.id)">
         <p class="unload__card-text">Задача выполнена: <span class="text-bold">{{ card.date }}</span></p>
         <p class="unload__card-text">Статус задачи: <span class="text-bold">{{ card.status_text }}</span> </p>
