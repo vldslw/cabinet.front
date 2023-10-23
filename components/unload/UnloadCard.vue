@@ -1,5 +1,5 @@
 <template>
   <section class="block unloadcard" card-status>
-      <slot></slot>
+      <slot/>
   </section>
 </template>

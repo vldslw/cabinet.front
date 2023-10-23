@@ -1,5 +1,5 @@
 <template>
   <section class="block">
-      <slot></slot>
+      <slot/>
   </section>
 </template>
